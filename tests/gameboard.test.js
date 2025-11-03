@@ -37,4 +37,30 @@ describe("Gameboard", () => {
     expect(gameboard.placeShip(3, [0, 0], "h")).toBe(true);
     expect(gameboard.placeShip(3, [1, 0], "v")).toBe(true);
   });
+
+  it("receiveAttack should throw an errow if given invalid coordinates", () => {
+    expect(() => gameboard.receiveAttack([-1, 9])).toThrow(/invalid/i);
+  });
+
+  it("receiveAttack should send attack to target ship and return true if given a valid ship coordinate", () => {
+    gameboard.placeShip(5, [1, 0], "v");
+    gameboard.placeShip(3, [6, 2], "v");
+    gameboard.placeShip(2, [1, 2], "h");
+    gameboard.placeShip(3, [4, 4], "h");
+    gameboard.placeShip(4, [7, 6], "h");
+
+    expect(gameboard.receiveAttack([1, 2])).toBe(true);
+    expect(gameboard.receiveAttack([1, 2])).toBe(undefined);
+
+    expect(gameboard.receiveAttack([1, 3])).toBe(true);
+    expect(gameboard.receiveAttack([1, 3])).toBe(undefined);
+  });
+
+  it("receiveAttack should record shot and return false when given a valid coordinates", () => {
+    expect(gameboard.receiveAttack([2, 5])).toBe(false);
+    expect(gameboard.receiveAttack([2, 5])).toBe(undefined);
+
+    expect(gameboard.receiveAttack([0, 1])).toBe(false);
+    expect(gameboard.receiveAttack([0, 1])).toBe(undefined);
+  });
 });

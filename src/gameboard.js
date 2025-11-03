@@ -64,7 +64,26 @@ export default class Gameboard {
     return true;
   }
 
-  receiveAttack([x, y]) {}
+  receiveAttack([x, y]) {
+    if (x < 0 || x > 9 || y < 0 || y > 9) {
+      throw new Error("Invalid coordinate!");
+    }
+
+    const targetCell = this.grid[x][y];
+
+    if (targetCell === null) {
+      // record shot
+      this.grid[x][y] = 0;
+      return false;
+    }
+    if (targetCell instanceof Ship) {
+      // send attack to target ship
+      this.grid[x][y].hit();
+      // record shot
+      this.grid[x][y] = 1;
+      return true;
+    }
+  }
 }
 
 const gb = new Gameboard();
