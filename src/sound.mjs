@@ -1,16 +1,16 @@
 const SoundManager = (() => {
-  const missedSound = new Audio("./sounds/missed.ogg");
-  const woundedSound = new Audio("./sounds/wounded.ogg");
-  const killedSound = new Audio("./sounds/killed.ogg");
+  // const missedSound = new Audio("./src/sounds/missed.ogg");
+  // const woundedSound = new Audio("./src/sounds/wounded.ogg");
+  // const killedSound = new Audio("./src/sounds/killed.ogg");
 
   const playMissedSound = () => {
-    new Audio("./sounds/missed.ogg").play();
+    new Audio("./src/sounds/missed.ogg").play();
   };
   const playWoundedSound = () => {
-    new Audio("./sounds/wounded.ogg").play();
+    new Audio("./src/sounds/wounded.ogg").play();
   };
   const playKilledSound = () => {
-    new Audio("./sounds/killed.ogg").play();
+    new Audio("./src/sounds/killed.ogg").play();
   };
 
   return {

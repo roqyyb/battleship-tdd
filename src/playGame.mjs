@@ -122,9 +122,9 @@ const Game = (() => {
 
     const coord = [row, col];
 
-    console.log(coord);
+    // console.log(coord);
 
-    console.log({ opponent, currentBoard });
+    // console.log({ opponent, currentBoard });
 
     // return;
 
@@ -167,8 +167,8 @@ const Game = (() => {
       toggleCurrentPlayer();
       toggleCurrentBoard();
 
-      console.log(currentPlayer.name);
-      console.log(currentBoard.id);
+      // console.log(currentPlayer.name);
+      // console.log(currentBoard.id);
       messageEle.textContent = `${currentPlayer.name}'s turn`;
 
       // console.log("after shot", getCurrentBoard().id);
