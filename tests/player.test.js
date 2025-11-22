@@ -1,5 +1,5 @@
 import { it, expect, describe, beforeEach } from "vitest";
-import Player from "../src/player";
+import Player from "../src/player.mjs";
 
 describe("Player", () => {
   let player;

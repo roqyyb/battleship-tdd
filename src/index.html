@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battleship: TOP</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="header"><h1>Battleship</h1></header>
+    <main id="main">
+      <div id="message"></div>
+      <div id="player-boards">
+        <!-- player one board -->
+        <div id="player-one-side">
+          <h3>Player One</h3>
+          <div id="board-one" class="board"></div>
+        </div>
+        <!-- end of player one board -->
+
+        <!-- player two board -->
+        <div id="player-two-side">
+          <h3>Computer</h3>
+          <div id="board-two" class="board"></div>
+        </div>
+        <!-- end of player two board -->
+      </div>
+      <div id="placement-control">
+        <form id="0" class="placement-form">
+          <h4>
+            <span id="player-name">Player one,</span> place your ship (Length:5)
+          </h4>
+          <div class="orientation-btn">
+            <p class="info">click to change orientation</p>
+            <button type="button" id="o-btn0">Placing vertically</button>
+          </div>
+        </form>
+
+        <form id="1" class="hidden placement-form">
+          <h4>
+            <span id="player-name">Player one,</span> place your ship (Length:4)
+          </h4>
+          <div class="orientation-btn">
+            <p class="info">click to change orientation</p>
+            <button type="button" id="o-btn1">Placing vertically</button>
+          </div>
+        </form>
+
+        <form id="2" class="hidden placement-form">
+          <h4>
+            <span id="player-name">Player one,</span> place your ship (Length:3)
+          </h4>
+          <div class="orientation-btn">
+            <p class="info">click to change orientation</p>
+            <button type="button" id="o-btn2">Placing vertically</button>
+          </div>
+        </form>
+
+        <form id="3" class="hidden placement-form">
+          <h4>
+            <span id="player-name">Player one,</span> place your ship (Length:3)
+          </h4>
+          <div class="orientation-btn">
+            <p class="info">click to change orientation</p>
+            <button type="button" id="o-btn3">Placing vertically</button>
+          </div>
+        </form>
+
+        <form id="4" class="hidden placement-form">
+          <h4>
+            <span id="player-name">Player one,</span> place your ship (Length:2)
+          </h4>
+          <div class="orientation-btn">
+            <p class="info">click to change orientation</p>
+            <button type="button" id="o-btn4">Placing vertically</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer id="footer">
+      <small>Designed by <em>roqyyb</em></small>
+    </footer>
+    <!-- <script type="module" src="updateUI.js"></script> -->
+    <script type="module" src="playGame.mjs"></script>
+    <script type="module" src="multiStepForm.mjs"></script>
+    <script>
+      const oBtns = document.querySelectorAll(".orientation-btn button");
+      oBtns.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          // const text = event.target.textContent;
+          // const text = btn.textContent;
+          // console.log(text)
+          const vText = "Placing vertically";
+          const hText = "Placing horizontally";
+          btn.textContent =
+            btn.textContent === "Placing vertically" ? hText : vText;
+        });
+      });
+    </script>
+  </body>
+</html>

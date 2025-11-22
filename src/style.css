@@ -1,0 +1,180 @@
+::after,
+::before,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --gray-bg: #f8f8f8;
+  --primary-color: #363674;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  /* background-color: green; */
+  color: #363674;
+}
+
+#header {
+  height: 50px;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header h1 {
+  font-weight: 400;
+  /* border: 1px solid rgba(0, 0, 255, 0.1); */
+}
+
+#main {
+  height: calc(100vh - 90px);
+  /* background: red; */
+  width: 80%;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+}
+
+#player-boards {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding-top: 5rem;
+}
+
+#player-boards h3 {
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.board.inactive {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.board {
+  /* display: grid;
+  width: 400px;
+  height: 400px;
+  padding: 0.5rem;
+  border: 2px solid #363674; */
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  grid-template-rows: repeat(10, 40px);
+}
+
+.cell {
+  display: grid;
+  place-content: center;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #b4b4ff;
+
+  /* border: 1px solid cyan;
+	background: lightgray; */
+}
+
+.cell.busy {
+  background: #f2f2ff;
+}
+
+.cell.miss {
+  background: rgb(209, 206, 206);
+}
+
+.cell.hit {
+  background: red;
+  border-color: red;
+}
+
+.cell.hover {
+  background: #f2f2ff;
+}
+
+.cell.hoverInvalid {
+  background: rgb(255, 88, 88);
+}
+
+#footer {
+  height: 40px;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#message {
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  /* border: 1px solid pink; */
+  width: fit-content;
+  background: #f8f8f8;
+  border-radius: 4px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+#message.win {
+  border: 1px solid green;
+  color: green;
+  background-color: white;
+}
+
+#message.lose {
+  border: 1px solid red;
+  color: red;
+  background-color: white;
+}
+
+#placement-control {
+  padding: 1rem;
+  margin: 0 auto;
+  margin-top: 3.5rem;
+  min-width: 200px;
+  max-width: fit-content;
+  background: var(--gray-bg);
+  border-radius: 4px;
+}
+
+form {
+  text-align: center;
+}
+
+form label {
+  display: block;
+}
+
+.orientation-btn {
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  width: fit-content;
+}
+.orientation-btn p {
+  display: none;
+  font-size: smaller;
+  font-style: italic;
+  color: red;
+}
+
+.orientation-btn:hover p {
+  display: block;
+}
+
+.orientation-btn button {
+  padding: 0.25rem;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.hidden {
+  display: none;
+}

@@ -1,4 +1,4 @@
-import Gameboard from "./gameboard";
+import Gameboard from "./gameboard.mjs";
 
 export default class Player {
   constructor(type) {
